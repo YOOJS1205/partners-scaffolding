@@ -1,4 +1,4 @@
-import AdminButton from '@components/admin/admin-button';
+import AdminButton from '@components/admin/AdminButton';
 import React from 'react';
 
 const AdminPage = () => {
