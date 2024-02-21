@@ -8,6 +8,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
+    "next",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -15,8 +16,37 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": [
+    "@typescript-eslint",
+    "simple-import-sort",
+    "unused-imports",
+    "react"
+  ],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "off",
+    "import/no-duplicates": "error",
+    "unused-imports/no-unused-imports": "error",
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          ["^next", "^next(.*)$"],
+          ["^react", "^react(.*)$"],
+          ["^@tanstack(.*)$"],
+          ["^[a-zA-Z/-]+$"],
+          ["^@api/(.*)$"],
+          ["^@components/(.*)$"],
+          ["^@hooks/(.*)$"],
+          ["^@constants/(.*)$"],
+          ["^@styles/(.*)$"],
+          ["^@lib/(.*)$"],
+          ["^@utils/(.*)$"],
+          ["^@types/(.*)$"],
+          ["^[./]", ".*"]
+        ]
+      }
+    ]
   }
 }
